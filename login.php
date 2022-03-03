@@ -3,9 +3,9 @@
   session_start();
 
   if (isset($_SESSION['user_id']) && $roles == 0) {
-    header('Location: Admin/home-admin.php');
+    header('Location: pages/Admin/home-admin.php');
   } else if (isset($_SESSION['user_id']) && $roles == 1){
-    header('Location:  Users/home-users.php');
+    header('Location:  pages/Users/home-users.php');
 
   }
   require 'database.php';
@@ -19,19 +19,26 @@
     $message = '';
     $roles = '';
 
-    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-      $_SESSION['user_id'] = $results['id'];
-      if($results['rol'] == 'Administrador'){
-        $roles = 0;
-        header("Location: Admin/home-admin.php");
-      } else if ($results['rol'] == 'Usuario') {
-        $roles = 1;
-        header("Location: Users/home-users.php");
-      }
+
+    if ($results != []) {
+        if (password_verify($_POST['password'], $results['password'])){
+            $_SESSION['user_id'] = $results['id'];
+            if($results['rol'] == 'Administrador'){
+                $roles = 0;
+                header("Location: pages/Admin/home-admin.php");
+            } else if ($results['rol'] == 'Usuario') {
+                $roles = 1;
+                header("Location: pages/Users/home-users.php");
+            }
+        } else {
+            $message = 'Sorry, incorrect password';
+        }
     } else {
-      $message = 'Sorry, those credentials do not match';
+        $message = 'Sorry, User not found';
     }
+      
   }
+  
 
 ?>
 

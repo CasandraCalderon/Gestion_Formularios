@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  require '../database.php';
+  require '../../database.php';
 
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, CI, name, rol, password FROM users WHERE id = :id');
@@ -22,13 +22,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Usuario</title>
+    <title>Menu Administrador</title>
 </head>
 <body>
 
     <br> Welcome. <?= $user['name']; ?>
     <br>You are Successfully Logged In <?= $user['rol']; ?>
-    <a href="../logout.php">
+    <a href="../../logout.php">
         Logout
     </a>
 </body>
