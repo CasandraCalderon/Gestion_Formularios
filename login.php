@@ -48,22 +48,25 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
-    <?php require 'partials/header.php' ?>
-
-    <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
-
-    <h1>Login</h1>
-    <span>or <a href="signup.php">SignUp</a></span>
-
-    <form action="login.php" method="POST">
-      <input name="CI" type="text" placeholder="Enter your CI">
-      <input name="password" type="password" placeholder="Enter your Password">
-      <input type="submit" value="Submit">
-    </form>
+  <div class="loginBox">
+    <img class="user" src="assets/img/logo.jpg" height="100px" width="100px">
+      <h3>Login</h3>
+      <form action="login.php" method="POST">
+          <div class="inputBox"> 
+            <input name="CI" type="text" placeholder="Enter your CI">
+            <input name="password" type="password" placeholder="Enter your Password">
+            <?php if(!empty($message)): ?>
+              <p>
+                <?= $message ?>
+            </p>
+              <?php endif; ?>
+            <input type="submit" value="Get in!">
+          </div>
+          <?php require 'partials/header.php' ?>
+      </form>
+  </div>
   </body>
 </html>
