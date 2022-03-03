@@ -2,8 +2,11 @@
 
   session_start();
 
-  if (isset($_SESSION['user_id'])) {
-    header('Location: Admin/create-user.php');
+  if (isset($_SESSION['user_id']) && $roles == 0) {
+    header('Location: Admin/home-admin.php');
+  } else if (isset($_SESSION['user_id']) && $roles == 1){
+    header('Location:  Users/home-users.php');
+
   }
   require 'database.php';
 
@@ -14,10 +17,17 @@
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
     $message = '';
+    $roles = '';
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: Admin/create-user.php");
+      if($results['rol'] == 'Administrador'){
+        $roles = 0;
+        header("Location: Admin/home-admin.php");
+      } else if ($results['rol'] == 'Usuario') {
+        $roles = 1;
+        header("Location: Users/home-users.php");
+      }
     } else {
       $message = 'Sorry, those credentials do not match';
     }

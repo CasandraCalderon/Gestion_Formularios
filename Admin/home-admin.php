@@ -27,7 +27,7 @@
 <body>
 
     <br> Welcome. <?= $user['name']; ?>
-    <br>You are Successfully Logged In
+    <br>You are Successfully Logged In <?= $user['rol']; ?>
     <a href="../logout.php">
         Logout
     </a>
