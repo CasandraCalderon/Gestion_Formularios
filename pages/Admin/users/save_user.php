@@ -1,5 +1,6 @@
 <?php
 require '../../../database.php';
+session_start();
 if (isset($_POST['save_user'])){
     
       if (!empty($_POST['CI']) && !empty($_POST['name']) && !empty($_POST['rol']) && !empty($_POST['password'])) {
@@ -12,10 +13,14 @@ if (isset($_POST['save_user'])){
         $stmt->bindParam(':password', $password);
     
         if ($stmt->execute()) {
-          echo 'Successfully created new user';
-        } else {
-          echo 'Sorry there must have been an issue creating your account';
+          $_SESSION['message'] = 'User save succesfuly';
+          $_SESSION['message_type'] = 'success';
+          header("location: ../users.php");
         }
+      } else {
+        $_SESSION['message'] = 'Complete the entire form';
+        $_SESSION['message_type'] = 'danger';
+        header("location: ../users.php"); 
       }
 }
 ?>

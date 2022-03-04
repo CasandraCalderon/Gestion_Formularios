@@ -1,5 +1,4 @@
 <?php
-  session_start();
   if (isset($_SESSION['user_id']) && $roles == 0) {
     header('Location: pages/Admin/home-admin.php');
   } else if (isset($_SESSION['user_id']) && $roles == 1){
