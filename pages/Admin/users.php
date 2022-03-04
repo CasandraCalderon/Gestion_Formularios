@@ -1,22 +1,31 @@
-<!doctype html>
-                        <html>
-                            <head>
-                                <meta charset='utf-8'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>Menu Administrador</title>
-                              </head>
-  <body oncontextmenu='return false' class='snippet-body'>
-  <div class="wrapper">
-  <?php require '../../partials/navbar-admin.php' ?>
-  <div class="content container-fluid">
-  <?php require '../../partials/navbar-top.php' ?>
-        <div class="content-wrapper">
-            <h2>Administracion de usuarios</h2>
-            <div class="line"></div>
+<?php include("partials/header.php") ?>
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-body">
+                <form action="users/save_user.php" method="POST">
+                    <div class="form-group">
+                        <input name="CI" type="text" class="form-control" placeholder="CI" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control" placeholder="Name" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <select name="rol" type="text" class="form-control" id="exampleFormControlSelect1">
+                        <option>Administrador</option>
+                        <option>Usuario</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" autofocus>
+                    </div>
+                    <input type="submit" class="btn btn-success btn-block" name="save_user" value="Save User">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            
         </div>
     </div>
-  </div>
-  
-  
-                                </body>
-                            </html>
+</div>
+<?php include("partials/footer.php") ?>

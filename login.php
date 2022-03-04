@@ -1,15 +1,11 @@
 <?php
-
   session_start();
-
   if (isset($_SESSION['user_id']) && $roles == 0) {
     header('Location: pages/Admin/home-admin.php');
   } else if (isset($_SESSION['user_id']) && $roles == 1){
     header('Location:  pages/Users/home-users.php');
-
   }
   require 'database.php';
-
   if (!empty($_POST['CI']) && !empty($_POST['password'])) {
     $records = $conn->prepare('SELECT id, CI, name, rol, password FROM users WHERE CI = :CI');
     $records->bindParam(':CI', $_POST['CI']);
