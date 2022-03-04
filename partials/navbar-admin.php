@@ -10,14 +10,8 @@
         </div>
         <ul class="list-unstyled components">
             <p>MENUS</p>
-            <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li> <a href="#">Dashboard1</a> </li>
-                    <li> <a href="#">Dashboard2</a> </li>
-                    <li> <a href="#">Dashboard3</a> </li>
-                </ul>
-            </li>
-            <li> <a href="#">Users</a> </li>
+            <li> <a href="../../pages/Admin/home-admin.php">Home</a> </li>
+            <li> <a href="../../pages/Admin/users.php">Users</a> </li>
             <li> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subscribers</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li> <a href="#">Active</a> </li>
