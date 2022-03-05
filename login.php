@@ -1,9 +1,4 @@
 <?php
-  if (isset($_SESSION['user_id']) && $roles == 0) {
-    header('Location: pages/Admin/home-admin.php');
-  } else if (isset($_SESSION['user_id']) && $roles == 1){
-    header('Location:  pages/Users/home-users.php');
-  }
   require 'database.php';
   if (!empty($_POST['CI']) && !empty($_POST['password'])) {
     $records = $conn->prepare('SELECT id, CI, name, rol, password FROM users WHERE CI = :CI');
@@ -12,17 +7,12 @@
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
     $message = '';
-    $roles = '';
-
-
     if ($results != []) {
         if (password_verify($_POST['password'], $results['password'])){
             $_SESSION['user_id'] = $results['id'];
             if($results['rol'] == 'Administrador'){
-                $roles = 0;
-                header("Location: pages/Admin/home-admin.php");
+                header("Location: pages/Admin/home-admin.php");      
             } else if ($results['rol'] == 'Usuario') {
-                $roles = 1;
                 header("Location: pages/Users/home-users.php");
             }
         } else {

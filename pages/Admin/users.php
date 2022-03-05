@@ -1,6 +1,10 @@
 <?php
-session_start();
-include("partials/header.php") 
+    require '../../bd.php';
+    session_start();
+    $where = "";
+?>
+<?php
+    include("partials/header.php") 
 ?>
 <div class="container p-4">
     <div class="row">
@@ -35,7 +39,31 @@ include("partials/header.php")
             </div>
         </div>
         <div class="col-md-8">
-            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CI</th>
+                        <th>NOMBRE</th>
+                        <th>ROL</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $query = "SELECT * FROM users";
+                    $resultado = mysqli_query($conn, $query);
+                    while($row = mysqli_fetch_array($resultado)) { ?>
+                    <tr>
+                        <td><?php echo$row['id']; ?></td>
+                        <td><?php echo$row['CI']; ?></td>
+                        <td><?php echo$row['name']; ?></td>
+                        <td><?php echo$row['rol']; ?></td>
+                        <td><a href="users/edit_user.php?id=<?php echo $row['id'] ?>">edit</a></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

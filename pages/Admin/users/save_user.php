@@ -1,6 +1,5 @@
 <?php
 require '../../../database.php';
-session_start();
 if (isset($_POST['save_user'])){
     
       if (!empty($_POST['CI']) && !empty($_POST['name']) && !empty($_POST['rol']) && !empty($_POST['password'])) {

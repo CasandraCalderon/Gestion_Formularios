@@ -1,7 +1,5 @@
 <?php
-
   require '../../database.php';
-  session_start();
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, CI, name, rol, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
@@ -15,10 +13,9 @@
     }
   }
 ?>
-<?php include("../../database.php") ?>
 <?php include("partials/header.php") ?>
 <div class="content-wrapper">
-  <h2>Pagina Principal</h2>
+  <h2>Welcome <?= $user['name'];?></h2>
     <div class="line"></div>
   </div>
 <?php include("partials/footer.php") ?>
