@@ -59,7 +59,13 @@
                         <td><?php echo$row['CI']; ?></td>
                         <td><?php echo$row['name']; ?></td>
                         <td><?php echo$row['rol']; ?></td>
-                        <td><a href="users/edit_user.php?id=<?php echo $row['id'] ?>">edit</a></td>
+                        <td>
+                        <a href="users/edit_user.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </a>  <a href="users/delete_user.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -67,4 +73,5 @@
         </div>
     </div>
 </div>
+
 <?php include("partials/footer.php") ?>
