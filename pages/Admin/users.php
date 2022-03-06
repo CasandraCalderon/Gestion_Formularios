@@ -1,10 +1,9 @@
 <?php
-    require '../../bd.php';
-    session_start();
-    $where = "";
+    include("partials/header.php") 
 ?>
 <?php
-    include("partials/header.php") 
+    require '../../bd.php';
+    $where = "";
 ?>
 <div class="container p-4">
     <div class="row">

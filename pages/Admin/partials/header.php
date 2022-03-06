@@ -9,13 +9,6 @@
     <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
     <script src="../../../js/jquery-3.6.0.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
-    <script>
-			$('#confirm-delete').on('show.bs.modal', function(e) {
-				$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-				
-				$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-			});
-		</script>
     </head>
     <body oncontextmenu='return false' class='snippet-body'>
         <div class="wrapper">
