@@ -1,10 +1,7 @@
 <?php
     include("partials/header.php") 
 ?>
-<?php
-    require '../../bd.php';
-    $where = "";
-?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -38,12 +35,12 @@
             </div>
         </div>
         <div class="col-md-8">
-            <form class="form-inline float-right" action="" method="POST">
+            <form class="form-inline float-right" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="form-group mx-sm-3 mb-2">
                     <input type="text" class="form-control" id="campo" name="campo" placeholder="CI">
                 </div>
-                <button type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar">Search</button>
-                </form>
+                <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Search"/>
+            </form>
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
@@ -56,7 +53,15 @@
                 </thead>
                 <tbody>
                     <?php
-                    $query = "SELECT * FROM users";
+                    require '../../bd.php';
+                    $where = "";
+                    if(!empty($_POST)){
+                        $valor = $_POST['campo'];
+                        if(!empty($valor)){
+                            $where = "WHERE CI = '$valor'";
+                        }
+                    }
+                    $query = "SELECT * FROM users $where";
                     $resultado = mysqli_query($conn, $query);
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
