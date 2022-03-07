@@ -79,6 +79,38 @@ h3 {
     border-bottom: 2px solid #4fa71c
 }
 
+
+
+.loginBox select {
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.loginBox select[type="text"],
+.loginBox select[type="password"] {
+    border: none;
+    border-bottom: 2px solid #000000;
+    outline: none;
+    height: 40px;
+    color: rgb(14, 13, 13);
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box
+}
+
+.loginBox select[type="text"]:hover,
+.loginBox select[type="password"]:hover {
+    color: #0c0c0c;
+    border: 1px solid #39940f;
+    box-shadow: 0 0 5px rgba(16, 143, 16, 0.3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
+}
+
+.loginBox select[type="text"]:focus,
+.loginBox select[type="password"]:focus {
+    border-bottom: 2px solid #4fa71c
+}
+
 .inputBox {
     position: relative
 }

@@ -23,8 +23,6 @@
     }
       
   }
-  
-
 ?>
 
 <!DOCTYPE html>

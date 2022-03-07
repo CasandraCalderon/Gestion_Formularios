@@ -5,9 +5,9 @@
     require '../../bd.php';
     $where = "";
 ?>
-<div class="container p-4">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <?php if (isset($_SESSION['message'])) { ?>
             <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
                 <?= $_SESSION['message']?>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <table class="table table-striped">
+            <table class="table table-striped text-center">
                 <thead>
                     <tr>
                         <th>ID</th>
