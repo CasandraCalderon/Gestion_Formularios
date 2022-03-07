@@ -34,10 +34,23 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="container">
             <form class="form-inline float-right" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="campo" name="campo" placeholder="Number or Name">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <select name="campo1" type="text" class="form-control" id="campo1">
+                        <option>All documents...</option>
+                        <?php
+                            require '../../bd.php';
+                            $query = "SELECT * FROM areas ORDER BY nro_area";
+                            $resultado = mysqli_query($conn, $query);
+                            while($row = mysqli_fetch_array($resultado)){ ?>
+                                <option value="<?php echo$row['name']; ?>"><?php echo$row['nro_area']; ?>. <?php echo$row['name']; ?></option>
+                        <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="campo" name="campo" placeholder="Name">
                 </div>
                 <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Search"/>
             </form>
@@ -54,11 +67,17 @@
                     <?php
                      require '../../bd.php';
                      $where = "";
-                     $where2 = "";
                     if(!empty($_POST)){
                         $valor = $_POST['campo'];
-                        if(!empty($valor)){
-                            $where = "WHERE name_document LIKE '%$valor%'";
+                        $valor1 = $_POST['campo1'];
+                        if(!empty($valor1) && $valor1!=='All documents...' && !empty($valor)){
+                                $where = "WHERE name_area LIKE '%$valor1%' AND name_document LIKE '%$valor%' ";
+                        }
+                        else if (!empty($valor1) && $valor1!=='All documents...'){
+                            $where = "WHERE name_area LIKE '%$valor1%'";
+                        }
+                        else if ((!empty($valor))){
+                            $where = "WHERE name_document LIKE '%$valor%' ";
                         }
                     }
                     $query = "SELECT * FROM forms $where ORDER BY name_area";
@@ -83,5 +102,4 @@
             </table>
         </div>
 </div>
-
 <?php include("partials/footer.php") ?>
