@@ -38,6 +38,12 @@
             </div>
         </div>
         <div class="col-md-8">
+            <form class="form-inline float-right" action="" method="POST">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="campo" name="campo" placeholder="CI">
+                </div>
+                <button type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar">Search</button>
+                </form>
             <table class="table table-striped text-center">
                 <thead>
                     <tr>

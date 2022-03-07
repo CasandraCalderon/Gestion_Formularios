@@ -55,7 +55,7 @@
                 <?= $message ?>
             </p>
               <?php endif; ?>
-            <input type="submit" name="Update">
+            <input type="submit" name="Update" value="Update">
           </div>
           <a href="../users.php"><i class="fa-solid fa-angles-left"></i> Back</a>
       </form>
