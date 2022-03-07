@@ -92,8 +92,8 @@
                             <i class="fa-solid fa-user-pen"></i>
                         </a> <a href="form/form_area.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
                             <i class="fa-solid fa-trash-can"></i>
-                        </a> <a href="form/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
-                            <i class="fa-solid fa-user-pen"></i>
+                        </a> <a href="form/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
+                            <i class="fa-solid fa-file-arrow-down"></i>
                         </a>
                         </td>
                     </tr>
