@@ -12,6 +12,7 @@
             <p>MENUS</p>
             <li> <a href="../../pages/Admin/home-admin.php">Home</a> </li>
             <li> <a href="../../pages/Admin/users.php">Users</a> </li>
+            <li> <a href="../../pages/Admin/area.php">Areas</a> </li>
             <li> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Subscribers</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li> <a href="#">Active</a> </li>
@@ -19,13 +20,6 @@
                     <li> <a href="#">Non Active</a> </li>
                 </ul>
             </li>
-            <li> <a href="#">Timeline</a> </li>
-            <li> <a href="#">Live Chat</a> </li>
-            <li> <a href="#">Likes</a> </li>
-            <li> <a href="#">Comments</a> </li>
-        </ul>
-        <ul class="list-unstyled CTAs">
-            <li> <a href="../../logout.php" class="download">Subscribe</a> </li>
         </ul>
     </nav>
  

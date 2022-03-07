@@ -14,40 +14,29 @@
             </div>
             <?php  $_SESSION["message"] = null;} ?>
             <div class="card card-body">
-                <form action="users/save_user.php" method="POST">
+                <form action="area/save_area.php" method="POST">
                     <div class="form-group">
-                        <input name="CI" type="text" class="form-control" placeholder="CI" autofocus>
+                        <input name="nro_area" type="text" class="form-control" placeholder="Area number" autofocus>
                     </div>
                     <div class="form-group">
                         <input name="name" type="text" class="form-control" placeholder="Name" autofocus>
                     </div>
-                    <div class="form-group">
-                        <select name="rol" type="text" class="form-control" id="exampleFormControlSelect1">
-                        <option>Administrador</option>
-                        <option>Usuario</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" autofocus>
-                    </div>
-                    <input type="submit" class="btn btn-success btn-block" name="save_user" value="Save User">
+                    <input type="submit" class="btn btn-success btn-block" name="save_area" value="Save Area">
                 </form>
             </div>
         </div>
         <div class="col-md-8">
             <form class="form-inline float-right" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="campo" name="campo" placeholder="CI or Name">
+                    <input type="text" class="form-control" id="campo" name="campo" placeholder="Number or Name">
                 </div>
                 <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Search"/>
             </form>
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>CI</th>
+                        <th>Nº</th>
                         <th>NOMBRE</th>
-                        <th>ROL</th>
                         <th>ACTIONS</th>
                     </tr>
                 </thead>
@@ -58,21 +47,19 @@
                     if(!empty($_POST)){
                         $valor = $_POST['campo'];
                         if(!empty($valor)){
-                            $where = "WHERE CI = '$valor' OR name LIKE '%$valor%'";
+                            $where = "WHERE nro_area = '$valor' OR name LIKE '%$valor%'";
                         }
                     }
-                    $query = "SELECT * FROM users $where";
+                    $query = "SELECT * FROM areas $where ORDER BY nro_area";
                     $resultado = mysqli_query($conn, $query);
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
-                        <td><?php echo$row['id']; ?></td>
-                        <td><?php echo$row['CI']; ?></td>
+                        <td><?php echo$row['nro_area']; ?></td>
                         <td><?php echo$row['name']; ?></td>
-                        <td><?php echo$row['rol']; ?></td>
                         <td>
-                        <a href="users/edit_user.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                        <a href="area/edit_area.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
                             <i class="fa-solid fa-user-pen"></i>
-                        </a>  <a href="users/delete_user.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
+                        </a>  <a href="area/delete_area.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                         </td>
