@@ -88,7 +88,7 @@
                         <td><?php echo$row['name_area']; ?></td>
                         <td><?php echo$row['date']; ?></td>
                         <td>
-                        <a href="forms/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
+                        <a href="forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
                         </a>
                         <a href="forms/delete_form.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
