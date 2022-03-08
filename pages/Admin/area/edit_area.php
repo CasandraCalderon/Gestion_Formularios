@@ -18,6 +18,9 @@
         $name = $_POST['name'];
         if ($name !== $ruta){
           if(!file_exists("../../../assets/files/".$name)){
+
+            $query = "UPDATE forms set name_area = '$name' WHERE  name_area= '$ruta'";
+            $result = mysqli_query($conn, $query);
             rename("../../../assets/files/".$ruta, "../../../assets/files/".$name);
             $query = "UPDATE areas set nro_area = '$nro_area', name = '$name' WHERE id = $id";
             $result = mysqli_query($conn, $query);
