@@ -3,7 +3,7 @@ require '../../../bd.php';
 session_start();
 if(isset($_POST['submit'])) {
     $name_document = $_FILES['archivo']['name'];
-    $destino = "../../../assets/files/".$name_document;
+    $destino = "../../../assets/files/".$_POST['name_area']."/".$name_document;
     $ruta = $_FILES['archivo']['tmp_name'];
     if($name_document != ""){
         if(copy($ruta, $destino)) {

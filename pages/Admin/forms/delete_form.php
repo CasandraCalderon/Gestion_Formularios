@@ -8,8 +8,9 @@
         if (mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_array($result);
             $name_document = $row['name_document'];
+            $name_area = $row['name_area'];
         }
-        $ruta = "../../../assets/files/".$name_document;
+        $ruta = "../../../assets/files/".$name_area."/".$name_document;
         unlink($ruta);
         $query = "DELETE FROM forms WHERE id= $id";
         $result = mysqli_query($conn, $query);
