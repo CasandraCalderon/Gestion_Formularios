@@ -35,20 +35,15 @@
             </div>
         </div>
         <div class="col-md-8">
-            <form class="form-inline float-right" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="campo" name="campo" placeholder="CI or Name">
-                </div>
-                <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Search"/>
-            </form>
-            <table class="table table-striped text-center">
+        <div class="container" style="margin-top: 10px;padding: 5px">
+    <table id="tablax" class="table table-striped table-bordered text-center" style="width:100%">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>CI</th>
-                        <th>NOMBRE</th>
-                        <th>ROL</th>
-                        <th>ACTIONS</th>
+                    <tr id="tm">
+                        <th >ID</th>
+                        <th >CI</th>
+                        <th >NOMBRE</th>
+                        <th >ROL</th>
+                        <th >ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,10 +60,10 @@
                     $resultado = mysqli_query($conn, $query);
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
-                        <td><?php echo$row['id']; ?></td>
-                        <td><?php echo$row['CI']; ?></td>
-                        <td><?php echo$row['name']; ?></td>
-                        <td><?php echo$row['rol']; ?></td>
+                        <td ><?php echo$row['id']; ?></td>
+                        <td ><?php echo$row['CI']; ?></td>
+                        <td ><?php echo$row['name']; ?></td>
+                        <td ><?php echo$row['rol']; ?></td>
                         <td>
                         <a href="users/edit_user.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
                             <i class="fa-solid fa-user-pen"></i>
@@ -80,8 +75,10 @@
                     <?php } ?>
                 </tbody>
             </table>
+                    </div>
         </div>
     </div>
+
 </div>
 
 <?php include("partials/footer.php") ?>

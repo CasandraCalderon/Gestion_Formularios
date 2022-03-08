@@ -14,6 +14,7 @@
             <li> <a href="../../pages/Admin/users.php">Users</a> </li>
             <li> <a href="../../pages/Admin/area.php">Areas</a> </li>
             <li> <a href="../../pages/Admin/forms.php">Forms</a> </li>
+            <li> <a href="../../pages/Admin/ejm.php">Ejm</a> </li>
         </ul>
     </nav>
  

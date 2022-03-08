@@ -32,6 +32,7 @@
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/22abe1b6b1.js" crossorigin="anonymous"></script>
   </head>
   <body>
   <div class="loginBox">
@@ -48,7 +49,7 @@
               <?php endif; ?>
             <input type="submit" value="Get in!">
           </div>
-          <?php require 'partials/header.php' ?>
+          <a href="/Formularios"><i class="fa-solid fa-angles-left"></i> Back</a>
       </form>
   </div>
   </body>

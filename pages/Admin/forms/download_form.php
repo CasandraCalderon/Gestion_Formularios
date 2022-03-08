@@ -12,8 +12,7 @@ if (isset($_GET['id'])) {
             $file = "../../../assets/files/".$ruta."/".$name_document;
         }
   if (is_file($file)) {
-    $filename = $name_document; // el nombre con el que se descargará, puede ser diferente al original
-    /*header("Content-Type: application/octet-stream");*/
+    $filename = $name_document;
     header("Content-Type: application/force-download");
     header("Content-Disposition: attachment; filename=\"$filename\"");
     readfile($file);
