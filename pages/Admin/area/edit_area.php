@@ -11,19 +11,40 @@
             $name = $row['name'];
         }
     }
+    $ruta = $name;
     if (isset($_POST['Update'])) {
         $id = $_GET['id'];
         $nro_area = $_POST['nro_area'];
         $name = $_POST['name'];
-        $query = "UPDATE areas set nro_area = '$nro_area', name = '$name' WHERE id = $id";
-        $result = mysqli_query($conn, $query);
-        if(!$result){
-            die("Failed");
+        if ($name !== $ruta){
+          if(!file_exists("../../../assets/files/".$name)){
+            rename("../../../assets/files/".$ruta, "../../../assets/files/".$name);
+            $query = "UPDATE areas set nro_area = '$nro_area', name = '$name' WHERE id = $id";
+            $result = mysqli_query($conn, $query);
+            if(!$result){
+                die("Failed");
+            } else {
+              $_SESSION['message'] = 'Area Update Successfuly';
+              $_SESSION['message_type'] = 'warning';
+              header("location: ../area.php"); 
+            }
+          } else {
+            $_SESSION['message'] = 'Existing area';
+            $_SESSION['message_type'] = 'warning';
+            header("location: ../area.php"); 
+          }
         }
-        $_SESSION['message'] = 'Area Update Successfuly';
-        $_SESSION['message_type'] = 'warning';
-        header("location: ../area.php"); 
-
+        else {
+          $query = "UPDATE areas set nro_area = '$nro_area', name = '$name' WHERE id = $id";
+          $result = mysqli_query($conn, $query);
+          if(!$result){
+              die("Failed");
+          } else {
+            $_SESSION['message'] = 'Area Update Successfuly';
+            $_SESSION['message_type'] = 'warning';
+            header("location: ../area.php"); 
+          }
+        }
     }
 ?>
 <!DOCTYPE html>

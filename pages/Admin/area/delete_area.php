@@ -7,6 +7,11 @@
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         $name_area = $row['name'];
+        $ruta = glob("../../../assets/files/".$name_area."/*");
+        foreach($ruta as $ruta){
+            if(is_file($ruta))
+            unlink($ruta); //elimino el fichero
+        }
         $query = "DELETE FROM forms WHERE name_area= '$name_area'";
         $result = mysqli_query($conn, $query);
         if(!$result){
@@ -17,7 +22,7 @@
         if(!$result){
             die("Failed");
         }
-        $_SESSION['message'] = 'Area Removed Successfuly';
+        $_SESSION['message'] = 'Area Removed Successfuly'.$ruta;
         $_SESSION['message_type'] = 'danger';
         header("location: ../area.php"); 
     }

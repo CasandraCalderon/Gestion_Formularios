@@ -27,7 +27,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input name="archivo" type="file" class="form-control" autofocus>
+                        <input name="archivo" type="file" class="form-control" accept="application/pdf" autofocus>
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="submit" value="Save Document">
                 </form>
@@ -88,12 +88,11 @@
                         <td><?php echo$row['name_area']; ?></td>
                         <td><?php echo$row['date']; ?></td>
                         <td>
-                        <a href="form/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
-                            <i class="fa-solid fa-user-pen"></i>
-                        </a> <a href="form/form_area.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </a> <a href="form/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
+                        <a href="forms/edit_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
+                        </a>
+                        <a href="forms/delete_form.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
+                            <i class="fa-solid fa-trash-can"></i>
                         </a>
                         </td>
                     </tr>
