@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="card card-body">
-                <form action="forms/save_form.php" method="POST" enctype="multipart/form-data">
+                <form action="forms/save_form.php" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <div class="form-group">
                         <select name="name_area" type="text" class="form-control" id="name_area">
                         <?php
@@ -32,7 +32,7 @@
             </div>
             <?php  $_SESSION["message"] = null;} ?>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
         <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">

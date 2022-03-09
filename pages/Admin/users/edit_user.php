@@ -42,7 +42,7 @@
   <div class="loginBox">
     <img class="user" src="../../../assets/img/logo.jpg" height="100px" width="100px">
       <h3>Edit User</h3>
-      <form action="edit_user.php?id=<?php echo $_GET['id'];?>" method="POST">
+      <form action="edit_user.php?id=<?php echo $_GET['id'];?>" method="POST" autocomplete="off">
           <div class="inputBox"> 
             <input name="CI" type="text" value="<?php echo $ci;?>">
             <input name="name" type="text" value="<?php echo $name;?>">

@@ -36,7 +36,7 @@
   <div class="loginBox">
     <img class="user" src="../assets/img/logo.jpg" height="100px" width="100px">
       <h3>Login</h3>
-      <form action="login.php" method="POST">
+      <form action="login.php" method="POST" autocomplete="off">
           <div class="inputBox"> 
             <input name="CI" type="text" placeholder="Enter your CI">
             <input name="password" type="password" placeholder="Enter your Password">

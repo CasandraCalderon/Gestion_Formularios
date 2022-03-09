@@ -3,7 +3,7 @@
 ?>
 <div class="container-fluid"> 
     <br>
-    <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">
                         <option>All documents...</option>

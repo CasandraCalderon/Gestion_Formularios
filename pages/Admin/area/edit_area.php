@@ -63,7 +63,7 @@
   <div class="loginBox">
     <img class="user" src="../../../assets/img/logo.jpg" height="100px" width="100px">
       <h3>Edit Area</h3>
-      <form action="edit_area.php?id=<?php echo $_GET['id'];?>" method="POST">
+      <form action="edit_area.php?id=<?php echo $_GET['id'];?>" method="POST" autocomplete="off">
           <div class="inputBox"> 
             <input name="nro_area" type="text" value="<?php echo $nro_area;?>">
             <input name="name" type="text" value="<?php echo $name;?>">

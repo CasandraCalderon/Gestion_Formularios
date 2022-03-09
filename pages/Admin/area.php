@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="card card-body">
-                <form action="area/save_area.php" method="POST">
+                <form action="area/save_area.php" method="POST" autocomplete="off">
                     <div class="form-group">
                         <input name="nro_area" type="text" class="form-control" placeholder="Area number" autofocus>
                     </div>
@@ -24,7 +24,7 @@
             </div>
             <?php  $_SESSION["message"] = null;} ?>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="container" style="margin-top: 10px;padding: 5px">
         <table id="tablax" class="table table-striped table-bordered text-center" style="width:100%">
                 <thead>
