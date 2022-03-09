@@ -1,5 +1,5 @@
 <?php
-require '../../../database.php';
+require '../../../database/database.php';
 if (isset($_POST['save_area'])){
     
       if (!empty($_POST['nro_area']) && !empty($_POST['name'])) {

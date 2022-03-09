@@ -1,5 +1,5 @@
 <?php
-require '../../../bd.php';
+require '../../../database/bd.php';
 session_start();
 if(isset($_POST['submit'])) {
     $name_document = $_FILES['archivo']['name'];

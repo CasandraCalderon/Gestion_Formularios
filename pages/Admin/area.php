@@ -3,16 +3,9 @@
 ?>
 
 <div class="container-fluid">
+<br>
     <div class="row">
         <div class="col-md-3">
-            <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message']?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php  $_SESSION["message"] = null;} ?>
             <div class="card card-body">
                 <form action="area/save_area.php" method="POST">
                     <div class="form-group">
@@ -24,15 +17,16 @@
                     <input type="submit" class="btn btn-success btn-block" name="save_area" value="Save Area">
                 </form>
             </div>
+            <br>
+            <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" id="myAlert" role="alert">
+                <?= $_SESSION['message']?>
+            </div>
+            <?php  $_SESSION["message"] = null;} ?>
         </div>
         <div class="col-md-8">
-            <form class="form-inline float-right" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="campo" name="campo" placeholder="Number or Name">
-                </div>
-                <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Search"/>
-            </form>
-            <table class="table table-striped text-center">
+            <div class="container" style="margin-top: 10px;padding: 5px">
+        <table id="tablax" class="table table-striped table-bordered text-center" style="width:100%">
                 <thead>
                     <tr>
                         <th>Nº</th>
@@ -42,7 +36,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    require '../../bd.php';
+                    require '../../database/bd.php';
                     $where = "";
                     if(!empty($_POST)){
                         $valor = $_POST['campo'];
@@ -67,6 +61,7 @@
                     <?php } ?>
                 </tbody>
             </table>
+                    </div>
         </div>
     </div>
 </div>

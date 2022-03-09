@@ -1,18 +1,10 @@
 <?php
     include("partials/header.php") 
 ?>
-
 <div class="container-fluid">
+<br>
     <div class="row">
         <div class="col-md-3">
-            <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message']?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php  $_SESSION["message"] = null;} ?>
             <div class="card card-body">
                 <form action="users/save_user.php" method="POST">
                     <div class="form-group">
@@ -33,12 +25,18 @@
                     <input type="submit" class="btn btn-success btn-block" name="save_user" value="Save User">
                 </form>
             </div>
+            <br>
+            <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible" id="myAlert" role="alert">
+                <?= $_SESSION['message']?>
+            </div>
+            <?php  $_SESSION["message"] = null;} ?>
         </div>
         <div class="col-md-8">
         <div class="container" style="margin-top: 10px;padding: 5px">
-    <table id="tablax" class="table table-striped table-bordered text-center" style="width:100%">
+    <table id="tablax" class="table table-striped table-bordered" style="width:100%">
                 <thead>
-                    <tr id="tm">
+                    <tr>
                         <th >ID</th>
                         <th >CI</th>
                         <th >NOMBRE</th>
@@ -48,7 +46,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    require '../../bd.php';
+                    require '../../database/bd.php';
                     $where = "";
                     if(!empty($_POST)){
                         $valor = $_POST['campo'];

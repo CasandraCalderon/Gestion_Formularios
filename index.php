@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Login"><a href="login.php">Login <i class="fa-solid fa-right-to-bracket"></i></a></div>
+            <div class="Login"><a href="pages/login.php">Login <i class="fa-solid fa-right-to-bracket"></i></a></div>
             <div class="mt-auto">
                 <p class="footer text-muted mb-0 mt-md-0 mt-4">By register you agree with our <span class="p-color me-1">terms and conditions</span>and <span class="p-color ms-1">privacy policy</span> </p>
             </div>

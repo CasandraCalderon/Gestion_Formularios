@@ -3,22 +3,15 @@
 ?>
 
 <div class="container-fluid">
+<br>
     <div class="row">
-        <div class="col-md-6">
-            <?php if (isset($_SESSION['message'])) { ?>
-            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message']?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?php  $_SESSION["message"] = null;} ?>
+        <div class="col-md-3">
             <div class="card card-body">
                 <form action="forms/save_form.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                         <select name="name_area" type="text" class="form-control" id="name_area">
                         <?php
-                            require '../../bd.php';
+                            require '../../database/bd.php';
                             $query = "SELECT * FROM areas ORDER BY nro_area";
                             $resultado = mysqli_query($conn, $query);
                             while($row = mysqli_fetch_array($resultado)){ ?>
@@ -32,15 +25,20 @@
                     <input type="submit" class="btn btn-success btn-block" name="submit" value="Save Document">
                 </form>
             </div>
+            <br>
+            <?php if (isset($_SESSION['message'])) { ?>
+            <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" id="myAlert" role="alert">
+                <?= $_SESSION['message']?>
+            </div>
+            <?php  $_SESSION["message"] = null;} ?>
         </div>
-    </div>
-    <br>
-    <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+        <div class="col-md-8">
+        <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">
                         <option>All documents...</option>
                         <?php
-                            require '../../bd.php';
+                            require '../../database/bd.php';
                             $query = "SELECT * FROM areas ORDER BY nro_area";
                             $resultado = mysqli_query($conn, $query);
                             while($row = mysqli_fetch_array($resultado)){ ?>
@@ -50,25 +48,24 @@
                     </div>
                 <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Select Area"/>
             </form>
-    <br><br>
+            <br><br>
     <div class="container">
             <table id="tablax" class="table table-striped text-center">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
-                        <th>AREA</th>
                         <th>FECHA</th>
                         <th>ACTIONS</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                     require '../../bd.php';
+                     require '../../database/bd.php';
                      $where = "";
                     if(!empty($_POST)){
                         $valor1 = $_POST['campo1'];
                        if (!empty($valor1) && $valor1!=='All documents...'){
-                            $where = "WHERE name_area LIKE '%$valor1%'";
+                            $where = "WHERE name_area = '$valor1'";
                         }
                         
                     }
@@ -77,7 +74,6 @@
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
                         <td><?php echo$row['name_document']; ?></td>
-                        <td><?php echo$row['name_area']; ?></td>
                         <td><?php echo$row['date']; ?></td>
                         <td>
                         <a href="forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
@@ -90,8 +86,10 @@
                     </tr>
                     <?php } ?>
                 </tbody>
-            </table>
-                    
-        </div>
+            </table>     
+        </div>  
+    </div>
+    </div>  
 </div>
+
 <?php include("partials/footer.php") ?>

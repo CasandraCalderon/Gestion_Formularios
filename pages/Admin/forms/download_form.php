@@ -1,5 +1,5 @@
 <?php
-require '../../../bd.php';
+require '../../../database/bd.php';
 session_start();
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php
-    require '../../../bd.php';
+    require '../../../database/bd.php';
     session_start();
     if (isset($_GET['id'])){
         $id = $_GET['id'];
