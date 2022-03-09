@@ -19,19 +19,19 @@
 <link rel="stylesheet" href="../../css/home-admin.css">
 <header>
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>BBBOOTSTRAP</h3>
-            <hr>
+        <div>
+        <img class="user" src="../../assets/img/sanMartin.png" height="100px" width="250px">
         </div>
         <ul class="list-unstyled components">
             <p>MENUS</p>
+            <hr>
             <li> <a href="../../pages/Admin/home-admin.php">Home</a> </li>
             <li> <a href="../../pages/Admin/users.php">Users</a> </li>
             <li> <a href="../../pages/Admin/area.php">Areas</a> </li>
             <li> <a href="../../pages/Admin/forms.php">Forms</a> </li>
         </ul>
-        <ul class="list-unstyled" style="margin-top: 160px">
-            <p><a href="../logout.php" class="btn btn-warning text-light mb-2"><i class="fa-solid fa-door-open"></i></a> <?= $user['name'];?></p>
+        <ul class="list-unstyled" style="margin-top: 150px">
+            <p><a href="../logout.php" class="btn btn-warning text-light mb-2"><i class="fa-solid fa-door-open"></i></a> Logout</p>
         </ul>
     </nav>
 </header>

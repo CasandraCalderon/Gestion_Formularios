@@ -27,17 +27,16 @@ $("#sidebar").toggleClass('active');
 });</script>
 <header>
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>BBBOOTSTRAP</h3>
-            <hr>
-        </div>
+        <div>
+        <img class="user" src="../../assets/img/sanMartin.png" height="100px" width="250px">
         <ul class="list-unstyled components">
             <p>MENUS</p>
+            <hr>
             <li> <a href="../../pages/Users/home-users.php">Home</a> </li>
             <li> <a href="../../pages/Users/forms.php">Forms</a> </li>
         </ul>
-            <ul class="list-unstyled" style="margin-top: 250px">
-            <p><a href="../logout.php" class="btn btn-warning text-light mb-2"><i class="fa-solid fa-door-open"></i></a> <?= $user['name'];?></p>
+            <ul class="list-unstyled" style="margin-top: 240px">
+            <p><a href="../logout.php" class="btn btn-warning text-light mb-2"><i class="fa-solid fa-door-open"></i></a> Logout</p>
         </ul>
     </nav>
 </header>

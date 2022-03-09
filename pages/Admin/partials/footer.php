@@ -10,7 +10,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
     </script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
         <script type="text/javascript">
         $(document).ready(function() {
             setTimeout(function() {
