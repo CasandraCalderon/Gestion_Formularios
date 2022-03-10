@@ -26,3 +26,5 @@
     <body oncontextmenu='return false' class='snippet-body'>
         <div class="wrapper">
             <?php require '../navbar/navbar-admin.php' ?>
+        <div class="content container-fluid">
+            <?php require '../navbar/navbar-top.php' ?>

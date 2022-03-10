@@ -2,7 +2,6 @@
     include("partials/header.php") 
 ?>
 <div class="container-fluid">
-<br>
     <div class="row">
         <div class="col-md-3">
             <div class="card card-body">

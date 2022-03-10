@@ -1,8 +1,8 @@
 <?php
     include("partials/header.php") 
 ?>
-<div class="container-fluid"> 
-    <br>
+<div class="container-fluid">
+<ul class="list-unstyled">
     <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">
@@ -48,7 +48,7 @@
                         <td><?php echo$row['name_area']; ?></td>
                         <td><?php echo$row['date']; ?></td>
                         <td>
-                        <a href="forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
+                        <a href="../../pages/Admin/forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
                         </a>
                         </td>
