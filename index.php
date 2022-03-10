@@ -1,17 +1,17 @@
 <!doctype html>
-                        <html>
-                            <head>
-                                <meta charset='utf-8'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>Cooperativa de Ahorro y Credito Societaria "San Martin"</title>
-                                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet'>
-                                <script src="https://kit.fontawesome.com/22abe1b6b1.js" crossorigin="anonymous"></script>
-                                <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
-                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-                                <link rel="stylesheet" href="css/index.css">
-                                </head>
-                                <body class='snippet-body'>
-                                <div class="container">
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Cooperativa de Ahorro y Credito Societaria "San Martin"</title>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/22abe1b6b1.js" crossorigin="anonymous"></script>
+        <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <link rel="stylesheet" href="css/index.css">
+        </head>
+        <body class='snippet-body'>
+        <div class="container">
     <div class="body d-md-flex align-items-center justify-content-between" id="cont">
         <div class="box-1 mt-md-0 mt-5"> <img src="assets/img/bank.jpg" class="" alt=""> </div>
         <div class=" box-2 d-flex flex-column h-100">
@@ -39,9 +39,9 @@
         </div> 
     </div>
 </div>
-                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/Javascript'></script>
-                                </body>
-                            </html>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/Javascript'></script>
+    </body>
+</html>

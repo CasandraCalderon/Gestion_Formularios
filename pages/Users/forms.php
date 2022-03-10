@@ -51,12 +51,14 @@
                         <a href="../../pages/Admin/forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
                         </a>
+                        <a href="../../pages/Admin/forms/view_form.php?id=<?php echo $row['id'] ?>" class="btn btn-info">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
                         </td>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
-                    
         </div>
 </div>
 <?php include("partials/footer.php") ?>

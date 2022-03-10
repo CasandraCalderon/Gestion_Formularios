@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="card card-body">
                 <form action="forms/save_form.php" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <div class="form-group">
@@ -31,7 +31,7 @@
             </div>
             <?php  $_SESSION["message"] = null;} ?>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
         <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">
@@ -77,6 +77,9 @@
                         <td>
                         <a href="forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
+                        </a>
+                        <a href="forms/view_form.php?id=<?php echo $row['id'] ?>" class="btn btn-info">
+                            <i class="fa-solid fa-eye"></i>
                         </a>
                         <a href="forms/delete_form.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
                             <i class="fa-solid fa-trash-can"></i>

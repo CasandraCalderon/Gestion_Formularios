@@ -1,7 +1,6 @@
 <?php
     include("partials/header.php") 
 ?>
-
 <div class="container-fluid">
 <br>
     <div class="row">
@@ -9,10 +8,10 @@
             <div class="card card-body">
                 <form action="area/save_area.php" method="POST" autocomplete="off">
                     <div class="form-group">
-                        <input name="nro_area" type="text" class="form-control" placeholder="Area number" autofocus>
+                        <input name="nro_area" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Area number" autofocus>
                     </div>
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" placeholder="Name" autofocus>
+                        <input name="name" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Name" autofocus>
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="save_area" value="Save Area">
                 </form>
@@ -61,9 +60,8 @@
                     <?php } ?>
                 </tbody>
             </table>
-                    </div>
+            </div>
         </div>
     </div>
 </div>
-
 <?php include("partials/footer.php") ?>
