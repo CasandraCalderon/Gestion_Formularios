@@ -14,8 +14,8 @@
                     </div>
                     <div class="form-group">
                         <select name="rol" type="text" class="form-control" id="exampleFormControlSelect1">
-                        <option>Administrador</option>
-                        <option>Usuario</option>
+                        <option value=1>Administrador</option>
+                        <option value=0>Usuario</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -33,13 +33,14 @@
         </div>
         <div class="col-md-9">
         <div class="container" style="margin-top: 10px;padding: 5px">
-    <table id="tablax" class="table table-striped table-bordered" style="width:100%">
+    <table id="tablax" class="table table-striped table-bordered" style="width:100%; text-align: center;">
                 <thead>
                     <tr>
                         <th >ID</th>
                         <th >CI</th>
                         <th >NOMBRE</th>
                         <th >ROL</th>
+                        <th >ESTADO</th>
                         <th >ACTIONS</th>
                     </tr>
                 </thead>
@@ -60,12 +61,25 @@
                         <td ><?php echo$row['id']; ?></td>
                         <td ><?php echo$row['CI']; ?></td>
                         <td ><?php echo$row['name']; ?></td>
-                        <td ><?php echo$row['rol']; ?></td>
+                        <?php if($row['rol']==1){ ?>
+                            <td>Administrador</td>
+                        <?php } ?>
+                        <?php if($row['rol']==0){?>
+                            <td >Usuario</td>
+                        <?php } ?>
+
+                        <?php if($row['state']==1){ ?>
+                            <td><span class="badge badge-success" style="font-size: 15px;">Habilitado</span></td>
+                        <?php } ?>
+                        <?php if($row['state']==0){?>
+                            <td><span class="badge badge-danger" style="font-size: 15px;">Inhabilitado</span></td>
+                        <?php } ?>
+
                         <td>
                         <a href="users/edit_user.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
                             <i class="fa-solid fa-user-pen"></i>
-                        </a>  <a href="users/delete_user.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
-                            <i class="fa-solid fa-trash-can"></i>
+                        </a>  <a href="users/delete_user.php?id=<?php echo $row['id'] ?>" class="btn <?php if($row['state']==="1"){?>btn-success<?php }else {?>btn-danger<?php }?>">
+                            <i class="<?php if($row['state']===1){?>fa-solid fa-lock-open<?php }else {?>fa-solid fa-lock<?php }?>"></i>
                         </a>
                         </td>
                     </tr>
@@ -77,5 +91,4 @@
     </div>
 
 </div>
-
 <?php include("partials/footer.php") ?>

@@ -47,8 +47,8 @@
             <input name="CI" type="text" value="<?php echo $ci;?>">
             <input name="name" type="text" value="<?php echo $name;?>">
             <select name="rol" type="text" value="<?php echo $rol;?>">
-                <option value="Administrador" <?php if($rol==="Administrador") echo "selected";?>>Administrador</option>
-                <option value="Usuario" <?php if($rol==="Usuario") echo "selected";?>>Usuario</option>
+                <option value="1" <?php if($rol==="1") echo "selected";?>>Administrador</option>
+                <option value="0" <?php if($rol==="0") echo "selected";?>>Usuario</option>
             </select>
             <?php if(!empty($message)): ?>
               <p>

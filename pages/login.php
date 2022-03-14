@@ -1,25 +1,30 @@
 <?php
   require '../database/database.php';
   if (!empty($_POST['CI']) && !empty($_POST['password'])) {
-    $records = $conn->prepare('SELECT id, CI, name, rol, password FROM users WHERE CI = :CI');
+    $records = $conn->prepare('SELECT id, CI, name, rol, password, state FROM users WHERE CI = :CI');
     $records->bindParam(':CI', $_POST['CI']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
     $message = '';
     if ($results != []) {
+      if($results['state']=="Habilitado"){
         if (password_verify($_POST['password'], $results['password'])){
-            $_SESSION['user_id'] = $results['id'];
-            if($results['rol'] == 'Administrador'){
-                header("Location: Admin/home-admin.php");      
-            } else if ($results['rol'] == 'Usuario') {
-                header("Location: Users/home-users.php");
-            }
-        } else {
-            $message = 'Sorry, incorrect password';
-        }
-    } else {
+          $_SESSION['user_id'] = $results['id'];
+          if($results['rol'] == 'Administrador'){
+              header("Location: Admin/home-admin.php");      
+          } else if ($results['rol'] == 'Usuario') {
+              header("Location: Users/home-users.php");
+          }
+      } else {
+          $message = 'Sorry, incorrect password';
+      }
+  } else {
+    $message = 'Sorry, User blocked';
+  } 
+
+      } else {
         $message = 'Sorry, User not found';
-    } 
+      }
   } 
 ?>
 
