@@ -7,15 +7,15 @@
     $results = $records->fetch(PDO::FETCH_ASSOC);
     $message = '';
     if ($results != []) {
-      if($results['state']=="Habilitado"){
+      if($results['state']==1){
         if (password_verify($_POST['password'], $results['password'])){
           $_SESSION['user_id'] = $results['id'];
-          if($results['rol'] == 'Administrador'){
+          if($results['rol'] == 1){
               header("Location: Admin/home-admin.php");      
-          } else if ($results['rol'] == 'Usuario') {
+          } else if ($results['rol'] == 0) {
               header("Location: Users/home-users.php");
           }
-      } else {
+      }else {
           $message = 'Sorry, incorrect password';
       }
   } else {
