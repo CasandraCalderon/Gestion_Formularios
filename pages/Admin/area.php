@@ -8,10 +8,10 @@
             <div class="card card-body">
                 <form action="area/save_area.php" method="POST" autocomplete="off">
                     <div class="form-group">
-                        <input name="nro_area" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Area number" autofocus>
+                        <input name="nro_area" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="sigla" autofocus>
                     </div>
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Name" autofocus>
+                        <input name="name" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Nombre" autofocus>
                     </div>
                     <input type="submit" class="btn btn-success btn-block" name="save_area" value="Save Area">
                 </form>
@@ -28,7 +28,7 @@
         <table id="tablax" class="table table-striped table-bordered text-center" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Nº</th>
+                        <th>SIGLA</th>
                         <th>NOMBRE</th>
                         <th>ACTIONS</th>
                     </tr>

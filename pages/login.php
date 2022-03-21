@@ -12,7 +12,7 @@
           $_SESSION['user_id'] = $results['id'];
           if($results['rol'] == 1){
               header("Location: Admin/home-admin.php");      
-          } else if ($results['rol'] == 0) {
+          } else if ($results['rol'] == 2) {
               header("Location: Users/home-users.php");
           }
       }else {

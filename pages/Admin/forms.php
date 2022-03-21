@@ -1,7 +1,6 @@
 <?php
     include("partials/header.php") 
 ?>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -21,7 +20,7 @@
                     <div class="form-group">
                         <input name="archivo" type="file" class="form-control" accept="application/pdf" autofocus>
                     </div>
-                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Save Document">
+                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
                 </form>
             </div>
             <br>

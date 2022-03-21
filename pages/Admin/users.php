@@ -14,8 +14,8 @@
                     </div>
                     <div class="form-group">
                         <select name="rol" type="text" class="form-control" id="exampleFormControlSelect1">
-                        <option value=1>Administrador</option>
-                        <option value=0>Usuario</option>
+                            <option value=1>Administrador</option>
+                            <option value=2>Empleado</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
             <br>
             <?php if (isset($_SESSION['message'])) { ?>
             <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible" id="myAlert" role="alert">
-                <?= $_SESSION['message']?>
+                <?= $_SESSION['message']?> 
             </div>
             <?php  $_SESSION["message"] = null;} ?>
         </div>
@@ -64,15 +64,15 @@
                         <?php if($row['rol']==1){ ?>
                             <td>Administrador</td>
                         <?php } ?>
-                        <?php if($row['rol']==0){?>
-                            <td >Usuario</td>
+                        <?php if($row['rol']==2){?>
+                            <td >Empleado</td>
                         <?php } ?>
 
                         <?php if($row['state']==1){ ?>
                             <td><span class="badge badge-success" style="font-size: 15px;">Habilitado</span></td>
                         <?php } ?>
                         <?php if($row['state']==0){?>
-                            <td><span class="badge badge-danger" style="font-size: 15px;">Inhabilitado</span></td>
+                            <td><span class="badge badge-danger" style="font-size: 15px;">Deshabilitado</span></td>
                         <?php } ?>
 
                         <td>

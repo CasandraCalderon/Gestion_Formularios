@@ -10,6 +10,7 @@
 
     if (count($results) > 0) {
       $user = $results;
+      $_SESSION['id_user'] = $user['id'];
     }
   }
 ?>

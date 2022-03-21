@@ -18,7 +18,7 @@ $("#sidebar").toggleClass('active');
             <p>MENUS</p>
             <hr>
             <li> <a href="../../pages/Users/home-users.php">Home</a> </li>
-            <li> <a href="../../pages/Users/forms.php">Forms</a> </li>
+            <li> <a href="../../pages/Users/forms.php">Ver Formularios</a> </li>
         </ul>
     </nav>
 </header>

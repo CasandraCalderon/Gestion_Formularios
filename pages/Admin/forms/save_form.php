@@ -8,7 +8,8 @@ if(isset($_POST['submit'])) {
     if($name_document != ""){
         if(copy($ruta, $destino)) {
             $name_area = $_POST['name_area'];
-            $query = "INSERT INTO forms (name_document, name_area) VALUES ('$name_document', '$name_area')";
+            $user_id = $_SESSION['id_user'];
+            $query = "INSERT INTO forms (name_document, name_area, user_id) VALUES ('$name_document', '$name_area', '$user_id')";
             $result = mysqli_query($conn, $query);
             if(!$result){
                 die("Failed");
