@@ -1,33 +1,39 @@
 <?php
     require '../../../database/bd.php';
     session_start();
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $query = "SELECT * FROM users WHERE id = $id";
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) == 1){
-            $row = mysqli_fetch_array($result);
-            $ci = $row['CI'];
-            $name = $row['name'];
-            $rol = $row['rol'];
-            $password = $row['password'];
-        }
-    }
-    if (isset($_POST['Update'])) {
-        $id = $_GET['id'];
-        $ci = $_POST['CI'];
-        $name = $_POST['name'];
-        $rol = $_POST['rol'];
-        $query = "UPDATE users set CI = '$ci', name = '$name', rol = '$rol' WHERE id = $id";
-        $result = mysqli_query($conn, $query);
-        if(!$result){
-            die("Failed");
-        }
-        $_SESSION['message'] = 'User Update Successfuly';
-        $_SESSION['message_type'] = 'warning';
-        header("location: ../users.php"); 
+    if (isset($_SESSION['id_user'])){
+        if(isset($_GET['id'])){
+          $id = $_GET['id'];
+          $query = "SELECT * FROM users WHERE id = $id";
+          $result = mysqli_query($conn, $query);
+          if (mysqli_num_rows($result) == 1){
+              $row = mysqli_fetch_array($result);
+              $ci = $row['CI'];
+              $name = $row['name'];
+              $rol = $row['rol'];
+              $password = $row['password'];
+          }
+      }
+      if (isset($_POST['Update'])) {
+          $id = $_GET['id'];
+          $ci = $_POST['CI'];
+          $name = $_POST['name'];
+          $rol = $_POST['rol'];
+          $query = "UPDATE users set CI = '$ci', name = '$name', rol = '$rol' WHERE id = $id";
+          $result = mysqli_query($conn, $query);
+          if(!$result){
+              die("Failed");
+          }
+          $_SESSION['message'] = 'User Update Successfuly';
+          $_SESSION['message_type'] = 'warning';
+          header("location: ../users.php"); 
 
+      }
     }
+    else {
+      header("Location: ../../logout.php");  
+    }
+    
 ?>
 <!DOCTYPE html>
 <html>

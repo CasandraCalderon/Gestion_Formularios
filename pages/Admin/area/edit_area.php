@@ -1,7 +1,8 @@
 <?php
     require '../../../database/bd.php';
     session_start();
-    if(isset($_GET['id'])){
+    if (isset($_SESSION['id_user'])){
+      if(isset($_GET['id'])){
         $id = $_GET['id'];
         $query = "SELECT * FROM areas WHERE id = $id";
         $result = mysqli_query($conn, $query);
@@ -48,6 +49,10 @@
             header("location: ../area.php"); 
           }
         }
+    }
+
+    } else {
+      header("Location: ../../logout.php");  
     }
 ?>
 <!DOCTYPE html>

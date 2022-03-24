@@ -1,7 +1,6 @@
 <?php
 require '../../../database/database.php';
 if (isset($_POST['save_user'])){
-    
       if (!empty($_POST['CI']) && !empty($_POST['name']) && !empty($_POST['rol']) && !empty($_POST['password'])) {
         $sql = "INSERT INTO users (CI, name, rol, password, state) VALUES (:CI, :name, :rol, :password, :state)";
         $stmt = $conn->prepare($sql);
