@@ -36,7 +36,6 @@
     <table id="tablax" class="table table-striped table-bordered" style="width:100%; text-align: center;">
                 <thead>
                     <tr>
-                        <th >ID</th>
                         <th >CI</th>
                         <th >NOMBRE</th>
                         <th >ROL</th>
@@ -58,7 +57,6 @@
                     $resultado = mysqli_query($conn, $query);
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
-                        <td ><?php echo$row['id']; ?></td>
                         <td ><?php echo$row['CI']; ?></td>
                         <td ><?php echo$row['name']; ?></td>
                         <?php if($row['rol']==1){ ?>

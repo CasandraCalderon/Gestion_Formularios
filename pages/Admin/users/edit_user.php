@@ -1,7 +1,7 @@
 <?php
     require '../../../database/bd.php';
     session_start();
-    if (isset($_SESSION['id_user'])){
+    if (isset($_SESSION['id_user']) && $_SESSION['rol']==1){
         if(isset($_GET['id'])){
           $id = $_GET['id'];
           $query = "SELECT * FROM users WHERE id = $id";

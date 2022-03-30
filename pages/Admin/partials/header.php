@@ -10,9 +10,10 @@
     if (count($results) > 0) {
       $user = $results;
       $_SESSION['id_user'] = $user['id'];
+      $_SESSION['rol'] = $user['rol'];
     }
   }
-  if (!isset($user)) {
+  if (!isset($user) || $_SESSION['rol']!=1) {
     header("Location: ../logout.php");  
   }
 ?>
