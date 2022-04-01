@@ -1,8 +1,9 @@
 <?php
+require_once('inc/config.php');
 $conn = mysqli_connect(
-  'localhost',
-  'root',
-  '',
-  'php_login_database'
+  $server,
+  $username,
+  $password,
+  $database
 );
 ?>

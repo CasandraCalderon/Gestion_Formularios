@@ -1,9 +1,6 @@
 <?php
 session_start();
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'php_login_database';
+require_once('inc/config.php');
 
 try {
   $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
