@@ -2,9 +2,9 @@
     require '../../../database/bd.php';
     session_start();
     if (isset($_SESSION['id_user']) && $_SESSION['rol']==1){
-        if(isset($_GET['id'])){
-          $id = $_GET['id'];
-          $query = "SELECT * FROM users WHERE id = $id";
+        if(isset($_GET['id_u'])){
+          $id_u = $_GET['id_u'];
+          $query = "SELECT * FROM users WHERE id_u = $id_u";
           $result = mysqli_query($conn, $query);
           if (mysqli_num_rows($result) == 1){
               $row = mysqli_fetch_array($result);
@@ -15,16 +15,16 @@
           }
       }
       if (isset($_POST['Update'])) {
-          $id = $_GET['id'];
+          $id_u = $_GET['id_u'];
           $ci = $_POST['CI'];
           $name = $_POST['name'];
           $rol = $_POST['rol'];
-          $query = "UPDATE users set CI = '$ci', name = '$name', rol = '$rol' WHERE id = $id";
+          $query = "UPDATE users set CI = '$ci', name = '$name', rol = '$rol' WHERE id_u = $id_u";
           $result = mysqli_query($conn, $query);
           if(!$result){
               die("Failed");
           }
-          $_SESSION['message'] = 'User Update Successfuly';
+          $_SESSION['message'] = 'Usuario Actualizado Exitosamente';
           $_SESSION['message_type'] = 'warning';
           header("location: ../users.php"); 
 
@@ -47,8 +47,8 @@
   <body>
   <div class="loginBox">
     <img class="user" src="../../../assets/img/logo.jpg" height="100px" width="100px">
-      <h3>Edit User</h3>
-      <form action="edit_user.php?id=<?php echo $_GET['id'];?>" method="POST" autocomplete="off">
+      <h3>Editar Usuario</h3>
+      <form action="edit_user.php?id_u=<?php echo $_GET['id_u'];?>" method="POST" autocomplete="off">
           <div class="inputBox"> 
             <input name="CI" type="text" value="<?php echo $ci;?>">
             <input name="name" type="text" value="<?php echo $name;?>">
@@ -61,9 +61,9 @@
                 <?= $message ?>
             </p>
               <?php endif; ?>
-            <input type="submit" name="Update" value="Update">
+            <input type="submit" name="Update" value="Actualizar">
           </div>
-          <a href="../users.php"><i class="fa-solid fa-angles-left"></i> Back</a>
+          <a href="../users.php"><i class="fa-solid fa-angles-left"></i> Atras</a>
       </form>
   </div>
   </body>

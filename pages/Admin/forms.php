@@ -10,17 +10,17 @@
                         <select name="name_area" type="text" class="form-control" id="name_area">
                         <?php
                             require '../../database/bd.php';
-                            $query = "SELECT * FROM areas ORDER BY nro_area";
+                            $query = "SELECT * FROM areas ORDER BY abbr_a";
                             $resultado = mysqli_query($conn, $query);
                             while($row = mysqli_fetch_array($resultado)){ ?>
-                                <option value="<?php echo$row['name']; ?>"><?php echo$row['nro_area']; ?>. <?php echo$row['name']; ?></option>
+                                <option value="<?php echo$row['name_area']; ?>"><?php echo$row['abbr_a']; ?>. <?php echo$row['name_area']; ?></option>
                         <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <input name="archivo" type="file" class="form-control" accept="application/pdf" autofocus>
                     </div>
-                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Subir">
                 </form>
             </div>
             <br>
@@ -34,17 +34,17 @@
         <form class="form-inline float-left" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                     <div class="form-group mx-sm-3 mb-2">
                         <select name="campo1" type="text" class="form-control" id="campo1">
-                        <option>All documents...</option>
+                        <option>Todas las Areas...</option>
                         <?php
                             require '../../database/bd.php';
-                            $query = "SELECT * FROM areas ORDER BY nro_area";
+                            $query = "SELECT * FROM areas ORDER BY abbr_a";
                             $resultado = mysqli_query($conn, $query);
                             while($row = mysqli_fetch_array($resultado)){ ?>
-                                <option value="<?php echo$row['name']; ?>"><?php echo$row['nro_area']; ?>. <?php echo$row['name']; ?></option>
+                                <option value="<?php echo$row['name_area']; ?>"><?php echo$row['abbr_a']; ?>. <?php echo$row['name_area']; ?></option>
                         <?php } ?>
                         </select>
                     </div>
-                <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Select Area"/>
+                <input type="submit" class="btn btn-success text-light mb-2" id="enviar" name="enviar" value="Seleccionar Area"/>
             </form>
             <br><br>
     <div class="container">
@@ -53,7 +53,7 @@
                     <tr>
                         <th>NOMBRE</th>
                         <th>FECHA</th>
-                        <th>ACTIONS</th>
+                        <th>ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,13 +74,13 @@
                         <td><?php echo$row['name_document']; ?></td>
                         <td><?php echo$row['date']; ?></td>
                         <td>
-                        <a href="forms/download_form.php?id=<?php echo $row['id'] ?>" class="btn btn-success">
+                        <a href="forms/download_form.php?id_f=<?php echo $row['id_f'] ?>" class="btn btn-success">
                             <i class="fa-solid fa-file-arrow-down"></i>
                         </a>
-                        <a href="forms/view_form.php?id=<?php echo $row['id'] ?>" class="btn btn-info">
+                        <a href="forms/view_form.php?id_f=<?php echo $row['id_f'] ?>" class="btn btn-info">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="forms/delete_form.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
+                        <a href="forms/delete_form.php?id_f=<?php echo $row['id_f'] ?>" class="btn btn-danger ">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                         </td>

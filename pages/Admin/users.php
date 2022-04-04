@@ -10,7 +10,7 @@
                         <input name="CI" type="text" class="form-control" placeholder="CI" autofocus>
                     </div>
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" placeholder="Name" autofocus>
+                        <input name="name" type="text" class="form-control" placeholder="Nombre Completo" autofocus>
                     </div>
                     <div class="form-group">
                         <select name="rol" type="text" class="form-control" id="exampleFormControlSelect1">
@@ -19,9 +19,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" autofocus>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" autofocus>
                     </div>
-                    <input type="submit" class="btn btn-success btn-block" name="save_user" value="Save User">
+                    <input type="submit" class="btn btn-success btn-block" name="save_user" value="Guardar Usuario">
                 </form>
             </div>
             <br>
@@ -40,7 +40,7 @@
                         <th >NOMBRE</th>
                         <th >ROL</th>
                         <th >ESTADO</th>
-                        <th >ACTIONS</th>
+                        <th >ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,9 +74,9 @@
                         <?php } ?>
 
                         <td>
-                        <a href="users/edit_user.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                        <a href="users/edit_user.php?id_u=<?php echo $row['id_u'] ?>" class="btn btn-secondary">
                             <i class="fa-solid fa-user-pen"></i>
-                        </a>  <a href="users/delete_user.php?id=<?php echo $row['id'] ?>" class="btn <?php if($row['state']==="1"){?>btn-success<?php }else {?>btn-danger<?php }?>">
+                        </a>  <a href="users/delete_user.php?id_u=<?php echo $row['id_u'] ?>" class="btn <?php if($row['state']==="1"){?>btn-success<?php }else {?>btn-danger<?php }?>">
                             <i class="<?php if($row['state']===1){?>fa-solid fa-lock-open<?php }else {?>fa-solid fa-lock<?php }?>"></i>
                         </a>
                         </td>

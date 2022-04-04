@@ -8,12 +8,12 @@
             <div class="card card-body">
                 <form action="area/save_area.php" method="POST" autocomplete="off">
                     <div class="form-group">
-                        <input name="nro_area" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="sigla" autofocus>
+                        <input name="abbr_a" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="sigla" autofocus>
                     </div>
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Nombre" autofocus>
+                        <input name="name_area" type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="Nombre" autofocus>
                     </div>
-                    <input type="submit" class="btn btn-success btn-block" name="save_area" value="Save Area">
+                    <input type="submit" class="btn btn-success btn-block" name="save_area" value="Guardar Area">
                 </form>
             </div>
             <br>
@@ -30,7 +30,7 @@
                     <tr>
                         <th>SIGLA</th>
                         <th>NOMBRE</th>
-                        <th>ACTIONS</th>
+                        <th>ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,19 +40,19 @@
                     if(!empty($_POST)){
                         $valor = $_POST['campo'];
                         if(!empty($valor)){
-                            $where = "WHERE nro_area = '$valor' OR name LIKE '%$valor%'";
+                            $where = "WHERE abbr_a = '$valor' OR name LIKE '%$valor%'";
                         }
                     }
-                    $query = "SELECT * FROM areas $where ORDER BY nro_area";
+                    $query = "SELECT * FROM areas $where ORDER BY abbr_a";
                     $resultado = mysqli_query($conn, $query);
                     while($row = mysqli_fetch_array($resultado)) { ?>
                     <tr>
-                        <td><?php echo$row['nro_area']; ?></td>
-                        <td><?php echo$row['name']; ?></td>
+                        <td><?php echo$row['abbr_a']; ?></td>
+                        <td><?php echo$row['name_area']; ?></td>
                         <td>
-                        <a href="area/edit_area.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                        <a href="area/edit_area.php?id_a=<?php echo$row['id_a'] ?>" class="btn btn-secondary">
                             <i class="fa-solid fa-user-pen"></i>
-                        </a>  <a href="area/delete_area.php?id=<?php echo $row['id'] ?>" class="btn btn-danger ">
+                        </a>  <a href="area/delete_area.php?id_a=<?php echo $row['id_a'] ?>" class="btn btn-danger ">
                             <i class="fa-solid fa-trash-can"></i>
                         </a>
                         </td>

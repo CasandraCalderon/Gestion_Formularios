@@ -17,12 +17,12 @@ $("#sidebar").toggleClass('active');
         <img class="user" src="../../assets/img/sanMartin.png" height="100px" width="250px">
         </div>
         <ul class="list-unstyled components">
-            <p>MENUS</p>
+            <p>MENU</p>
             <hr>
-            <li> <a href="../../pages/Admin/home-admin.php">Home</a> </li>
-            <li> <a href="../../pages/Admin/users.php">Users</a> </li>
+            <li> <a href="../../pages/Admin/home-admin.php">Inicio</a> </li>
+            <li> <a href="../../pages/Admin/users.php">Usuarios</a> </li>
             <li> <a href="../../pages/Admin/area.php">Areas</a> </li>
-            <li> <a href="../../pages/Admin/forms.php">Forms</a> </li>
+            <li> <a href="../../pages/Admin/forms.php">Formularios</a> </li>
         </ul>
     </nav>
 </header>

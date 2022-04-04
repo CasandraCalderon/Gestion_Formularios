@@ -1,9 +1,9 @@
 <?php
 require '../../../database/bd.php';
 session_start();
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $query = "SELECT * FROM forms WHERE id = $id";
+if (isset($_GET['id_f'])) {
+    $id = $_GET['id_f'];
+    $query = "SELECT * FROM forms WHERE id_f = $id";
     $result = mysqli_query($conn, $query);
      if (mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_array($result);

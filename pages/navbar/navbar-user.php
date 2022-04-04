@@ -15,9 +15,9 @@ $("#sidebar").toggleClass('active');
         <div>
         <img class="user" src="../../assets/img/sanMartin.png" height="100px" width="250px">
         <ul class="list-unstyled components">
-            <p>MENUS</p>
+            <p>MENU</p>
             <hr>
-            <li> <a href="../../pages/Users/home-users.php">Home</a> </li>
+            <li> <a href="../../pages/Users/home-users.php">Inicio</a> </li>
             <li> <a href="../../pages/Users/forms.php">Ver Formularios</a> </li>
         </ul>
     </nav>

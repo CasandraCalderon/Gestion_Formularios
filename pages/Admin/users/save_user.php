@@ -13,7 +13,7 @@ if (isset($_POST['save_user'])){
         $stmt->bindParam(':state', $state);
     
         if ($stmt->execute()) {
-          $_SESSION['message'] = 'User save succesfuly';
+          $_SESSION['message'] = 'Usuario Guardado Exitosamente';
           $_SESSION['message_type'] = 'success';
           header("location: ../users.php");
         }
